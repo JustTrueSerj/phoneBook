@@ -11,4 +11,5 @@
   </ul>
   <hr>
 </div>
-<app-record></app-record>
+
+<app-record [record]="x" *ngFor="let x of (records$ | async)?.length"></app-record>

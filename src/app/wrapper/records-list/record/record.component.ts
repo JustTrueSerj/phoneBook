@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-record',
@@ -7,9 +7,12 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class RecordComponent implements OnInit {
+  @Input() record: any;
+
   constructor() {
   }
 
   ngOnInit() {
+    console.log(this.record)
   }
 }

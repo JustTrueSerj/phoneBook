@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {select, Store} from '@ngrx/store';
 
 @Component({
   selector: 'app-records-list',
@@ -7,9 +8,12 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class RecordsListComponent implements OnInit {
-  constructor() {
+  records$ = this.store.pipe(select('records'));
+
+  constructor(private store: Store<any>) {
   }
 
   ngOnInit() {
+    // this.records$.subscribe(x => console.log(x));
   }
 }
