@@ -1,0 +1,13 @@
+#submitButton {
+  background-color: rgb(89, 168, 71);
+  color: white;
+  border: 3px solid rgb(89, 168, 71);
+  border-radius: 2px;
+  transition: all ease 0.5s;
+  &:disabled {
+    background-color: darkred;
+    color: ghostwhite;
+    border: 1px solid red;
+    transform: rotateX(90deg);
+  }
+}

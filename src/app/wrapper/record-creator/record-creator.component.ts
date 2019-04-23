@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-record-creator',
@@ -7,9 +8,22 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class RecordCreatorComponent implements OnInit {
-  constructor() {
+  recordCreatorForm: FormGroup = this.fb.group({
+    surname: ['', Validators.required],
+    name: [''],
+    patronymic: [''],
+    telephoneNumber: ['', Validators.required],
+  });
+
+  constructor(private fb: FormBuilder) {
+
+  }
+
+  sendRecord() {
+  console.log(this.recordCreatorForm.controls.surname.value);
   }
 
   ngOnInit() {
+
   }
 }

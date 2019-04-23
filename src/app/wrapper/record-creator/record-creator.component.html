@@ -1,1 +1,15 @@
 <h1>record-creator</h1>
+<form [formGroup]="recordCreatorForm">
+
+  <div class="{{textsInput}}" *ngFor="let textsInput of ['surname', 'name', 'patronymic', 'telephoneNumber']">
+    <label for="{{textsInput}}"> {{textsInput}}</label>
+    <input
+      type="text"
+      id="{{textsInput}}"
+      name="{{textsInput}}"
+      formControlName="{{textsInput}}">
+  </div>
+
+  <button (click)="sendRecord()" id="submitButton" type="submit" [disabled]="!recordCreatorForm.valid">+</button>
+
+</form>
