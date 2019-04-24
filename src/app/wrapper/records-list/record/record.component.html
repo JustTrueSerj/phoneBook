@@ -3,6 +3,6 @@
   <li>{{record.surname}}</li>
   <li>{{record.name}}</li>
   <li>{{record.patronymic}}</li>
-  <li>{{record.phoneNumber}}</li>
+  <li>{{record.phoneNumber | comfortableTelephoneNumber}}</li>
   <li class="removeButton" (click)="removeRecord(record.id)">&#10008;</li>
 </ul>

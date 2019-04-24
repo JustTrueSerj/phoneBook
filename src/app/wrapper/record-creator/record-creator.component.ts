@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {AddRecordAction} from '../../ngrx/actions/records.actions';
 import {RecordModel} from '../../shared/record.model';
+import {RootState} from '../../shared/root-state.model';
 
 @Component({
   selector: 'app-record-creator',
@@ -23,18 +24,18 @@ export class RecordCreatorComponent implements OnInit {
   });
   idCounter = 0;
 
-  constructor(private fb: FormBuilder, private store: Store<any>) {
+  constructor(private fb: FormBuilder, private store: Store<RootState>) {
 
   }
 
   addRecord() {
-  console.log(this.recordCreatorForm.controls.surname.value);
   const record: RecordModel = {
     ...this.recordCreatorForm.value,
     id: this.idCounter
   };
   this.idCounter++;
   this.store.dispatch(new AddRecordAction(record));
+  this.recordCreatorForm.reset();
   }
 
   ngOnInit() {

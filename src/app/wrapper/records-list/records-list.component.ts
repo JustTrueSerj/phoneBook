@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
+import {RootState} from '../../shared/root-state.model';
+import {selectRecord} from '../../ngrx/selectors/record.selector';
 
 @Component({
   selector: 'app-records-list',
@@ -8,9 +10,9 @@ import {select, Store} from '@ngrx/store';
 })
 
 export class RecordsListComponent implements OnInit {
-  records$ = this.store.pipe(select('records'));
+  records$ = this.store.pipe(select(selectRecord));
 
-  constructor(private store: Store<any>) {
+  constructor(private store: Store<RootState>) {
   }
 
   ngOnInit() {
