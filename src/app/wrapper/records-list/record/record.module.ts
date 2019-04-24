@@ -1,9 +1,12 @@
 import {NgModule} from '@angular/core';
 
 import {RecordComponent} from './record.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   exports: [RecordComponent],
   declarations: [RecordComponent],
   providers: [],

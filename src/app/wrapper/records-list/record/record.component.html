@@ -1,1 +1,10 @@
-<h1>record</h1>
+<ul class="record" id="record_{{record.surname}}_{{record.phoneNumber}}">
+<!--  <li [ngClass]="{favorite: record.isFavorite}">&#9734;</li>-->
+  <li *ngIf="record.isFavorite" class="favorite">&#9733;</li>
+  <li *ngIf="!record.isFavorite">&#9734;</li>
+  <li>{{record.surname}}</li>
+  <li>{{record.name}}</li>
+  <li>{{record.patronymic}}</li>
+  <li>{{record.phoneNumber}}</li>
+  <li style="color: red; font-weight: bold;">&#10008;</li>
+</ul>

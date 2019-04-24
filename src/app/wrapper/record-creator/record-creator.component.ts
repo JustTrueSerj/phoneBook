@@ -14,7 +14,7 @@ export class RecordCreatorComponent implements OnInit {
     surname: ['', Validators.required],
     name: [''],
     patronymic: [''],
-    telephoneNumber: ['', Validators.required],
+    phoneNumber: ['', Validators.required],
   });
 
   constructor(private fb: FormBuilder, private store: Store<any>) {
@@ -28,8 +28,7 @@ export class RecordCreatorComponent implements OnInit {
     surname: this.recordCreatorForm.controls.surname.value,
     name: this.recordCreatorForm.controls.name.value,
     patronymic: this.recordCreatorForm.controls.patronymic.value,
-    telephoneNumber: this.recordCreatorForm.controls.telephoneNumber.value,
-    removeThis: false
+    phoneNumber: this.recordCreatorForm.controls.phoneNumber.value
   };
   this.store.dispatch(new AddRecordAction(record));
   }

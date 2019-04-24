@@ -1,0 +1,15 @@
+.record {
+  list-style: none;
+  letter-spacing: 0.3px;
+  display: flex;
+  & li {
+    width: 300px
+  }
+  &:first-child {
+
+  }
+}
+.favorite {
+  color: gold;
+  font-weight: bold;
+}

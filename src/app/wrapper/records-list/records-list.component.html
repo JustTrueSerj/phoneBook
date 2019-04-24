@@ -12,4 +12,4 @@
   <hr>
 </div>
 
-<app-record [record]="x" *ngFor="let x of (records$ | async)?.length"></app-record>
+<app-record [record]="x" *ngFor="let x of (records$ | async)?.records"></app-record>

@@ -1,7 +1,7 @@
 <h1>record-creator</h1>
 <form [formGroup]="recordCreatorForm">
 
-  <div class="{{textsInput}}" *ngFor="let textsInput of ['surname', 'name', 'patronymic', 'telephoneNumber']">
+  <div class="{{textsInput}}" *ngFor="let textsInput of ['surname', 'name', 'patronymic', 'phoneNumber']">
     <label for="{{textsInput}}"> {{textsInput}}</label>
     <input
       type="text"

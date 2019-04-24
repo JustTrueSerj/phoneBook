@@ -14,6 +14,5 @@ export class RecordsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.records$.subscribe(x => console.log(x));
   }
 }
