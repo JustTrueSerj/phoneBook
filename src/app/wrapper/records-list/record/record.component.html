@@ -1,6 +1,5 @@
 <ul class="record" id="record_{{record.surname}}_{{record.phoneNumber}}">
-  <li (click)="changeFavorite(record.id)" *ngIf="record.isFavorite" class="star favorite">&#9733;</li>
-  <li (click)="changeFavorite(record.id)" *ngIf="!record.isFavorite" class="star">&#9734;</li>
+  <li class="star" [class.favorite]="record.isFavorite" (click)="changeFavorite(record.id)">{{record.isFavorite ? '&#9733;' : '&#9734;'}}</li>
   <li>{{record.surname}}</li>
   <li>{{record.name}}</li>
   <li>{{record.patronymic}}</li>

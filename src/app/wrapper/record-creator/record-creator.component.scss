@@ -1,4 +1,4 @@
-#submitButton {
+.submitButton {
   background-color: rgb(89, 168, 71);
   color: white;
   border: 3px solid rgb(89, 168, 71);
@@ -10,4 +10,14 @@
     border: 1px solid red;
     transform: rotateX(90deg);
   }
+}
+
+.field {
+  border-radius: 3px;
+  outline: none;
+}
+
+.invalid {
+  border: 1.5px solid red;
+  border-radius: 3px;
 }

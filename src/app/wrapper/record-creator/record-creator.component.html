@@ -1,15 +1,40 @@
 <h1>record-creator</h1>
 <form [formGroup]="recordCreatorForm">
 
-  <div class="{{textsInput}}" *ngFor="let textsInput of ['surname', 'name', 'patronymic', 'phoneNumber']">
-    <label for="{{textsInput}}"> {{textsInput}}</label>
-    <input
-      type="text"
-      id="{{textsInput}}"
-      name="{{textsInput}}"
-      formControlName="{{textsInput}}">
-  </div>
+  <label for="surname">Surname</label>
+  <input
+    class="field"
+    type="text"
+    id="surname"
+    name="surname"
+    [class.invalid]="!recordCreatorForm.controls.surname.untouched && !recordCreatorForm.controls.surname.valid"
+    formControlName="surname">
 
-  <button (click)="addRecord()" id="submitButton" type="submit" [disabled]="!recordCreatorForm.valid">+</button>
+  <label for="name">name</label>
+  <input
+    class="field"
+    type="text"
+    id="name"
+    name="name"
+    formControlName="name">
+
+  <label for="patronymic">patronymic</label>
+  <input
+    class="field"
+    type="text"
+    id="patronymic"
+    name="patronymic"
+    formControlName="patronymic">
+
+  <label for="phoneNumber">phoneNumber</label>
+  <input
+    class="field"
+    type="text"
+    id="phoneNumber"
+    name="phoneNumber"
+    [class.invalid]="!recordCreatorForm.controls.phoneNumber.untouched && !recordCreatorForm.controls.phoneNumber.valid"
+    formControlName="phoneNumber">
+
+  <button (click)="addRecord()" class="submitButton" type="submit" [disabled]="!recordCreatorForm.valid">+</button>
 
 </form>

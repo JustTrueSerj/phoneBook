@@ -3,35 +3,34 @@ import {ADD_RECORD, CHANGE_FAVORITE, RecordsActions, REMOVE_RECORD} from '../act
 export const initialState = {
   records: [],
 };
-let lastRequest = [];
 
 export function recordsReducer(state = initialState, action: RecordsActions) {
   switch (action.type) {
 
     case ADD_RECORD:
-      lastRequest.push(action.payload);
-      return {...state, records: lastRequest};
+      state.records.push(action.payload);
+      return state;
 
     case REMOVE_RECORD:
-      lastRequest = lastRequest.filter(arg => arg.id !== action.payload);
-      return {...state, records: lastRequest};
+      state.records = state.records.filter(arg => arg.id !== action.payload);
+      return state;
 
     case CHANGE_FAVORITE:
-      lastRequest = lastRequest.map(arg => {
+      state.records = state.records.map(arg => {
         if (arg === action.payload) {
           arg.isFavorite = !arg.isFavorite;
         }
         return arg;
       });
 
-      lastRequest.sort(sortFavorites);
+      state.records.sort(sortFavorites);
 
-      return {...state, records: lastRequest};
+      return state;
   }
 }
 
-function sortFavorites(a) {
-  if (a.isFavorite) {
+function sortFavorites(record) {
+  if (record  .isFavorite) {
     return -1;
   } else {
     return 1;

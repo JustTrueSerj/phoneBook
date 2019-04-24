@@ -15,7 +15,11 @@ export class RecordCreatorComponent implements OnInit {
     surname: ['', Validators.required],
     name: [''],
     patronymic: [''],
-    phoneNumber: ['', Validators.required],
+    phoneNumber: ['+7', [
+      Validators.required,
+      Validators.maxLength(12),
+      Validators.minLength(12)
+    ]]
   });
   idCounter = 0;
 
@@ -26,12 +30,8 @@ export class RecordCreatorComponent implements OnInit {
   addRecord() {
   console.log(this.recordCreatorForm.controls.surname.value);
   const record: RecordModel = {
-    id: this.idCounter,
-    isFavorite: false,
-    surname: this.recordCreatorForm.controls.surname.value,
-    name: this.recordCreatorForm.controls.name.value,
-    patronymic: this.recordCreatorForm.controls.patronymic.value,
-    phoneNumber: this.recordCreatorForm.controls.phoneNumber.value
+    ...this.recordCreatorForm.value,
+    id: this.idCounter
   };
   this.idCounter++;
   this.store.dispatch(new AddRecordAction(record));
