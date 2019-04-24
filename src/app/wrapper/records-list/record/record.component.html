@@ -1,10 +1,9 @@
 <ul class="record" id="record_{{record.surname}}_{{record.phoneNumber}}">
-<!--  <li [ngClass]="{favorite: record.isFavorite}">&#9734;</li>-->
-  <li *ngIf="record.isFavorite" class="favorite">&#9733;</li>
-  <li *ngIf="!record.isFavorite">&#9734;</li>
+  <li (click)="changeFavorite(record.id)" *ngIf="record.isFavorite" class="star favorite">&#9733;</li>
+  <li (click)="changeFavorite(record.id)" *ngIf="!record.isFavorite" class="star">&#9734;</li>
   <li>{{record.surname}}</li>
   <li>{{record.name}}</li>
   <li>{{record.patronymic}}</li>
   <li>{{record.phoneNumber}}</li>
-  <li style="color: red; font-weight: bold;">&#10008;</li>
+  <li class="removeButton" (click)="removeRecord(record.id)">&#10008;</li>
 </ul>
