@@ -12,12 +12,12 @@ export class AddRecordAction implements Action {
 
 export class RemoveRecordAction implements Action {
   readonly type = REMOVE_RECORD;
-  constructor(readonly payload: number) {}
+  constructor(readonly payload: RecordModel) {}
 }
 
 export class ChangeFavoriteAction implements Action {
   readonly type = CHANGE_FAVORITE;
-  constructor(readonly payload: number) {}
+  constructor(public id: string, public changes: Partial<RecordModel>) {}
 }
 
 export type RecordsActions = AddRecordAction | RemoveRecordAction | ChangeFavoriteAction;

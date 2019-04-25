@@ -31,7 +31,8 @@ export class RecordCreatorComponent implements OnInit {
   addRecord() {
   const record: RecordModel = {
     ...this.recordCreatorForm.value,
-    id: this.idCounter
+    id: this.idCounter,
+    isFavorite: false
   };
   this.idCounter++;
   this.store.dispatch(new AddRecordAction(record));

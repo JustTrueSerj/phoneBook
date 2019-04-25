@@ -1,27 +1,27 @@
 import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity';
 import {RecordModel} from '../../shared/record.model';
-import {ADD_RECORD, RecordsActions} from '../actions/records.actions';
-
-// export const initialState = {
-//   records: [],
-// };
+import {ADD_RECORD, CHANGE_FAVORITE, RecordsActions, REMOVE_RECORD} from '../actions/records.actions';
 
 export interface State extends EntityState<RecordModel> {
-  records: RecordModel[];
 }
 
 export const adapter: EntityAdapter<RecordModel> = createEntityAdapter<RecordModel>();
 
-export const initialState: State = adapter.getInitialState({
-  records: []
-});
+export const initialState: State = adapter.getInitialState();
 
 export function recordsReducer(state = initialState, action: RecordsActions): State {
   switch (action.type) {
-    case ADD_RECORD: {
-      console.log(action.payload);
+    case ADD_RECORD:
       return adapter.addOne(action.payload, state);
-    }
+
+    case REMOVE_RECORD:
+      return adapter.removeOne(action.payload, state);
+
+    case CHANGE_FAVORITE:
+      return adapter.updateOne({id: action.id, changes: action.changes}, state);
+
+    default:
+      return state;
   }
 }
 
