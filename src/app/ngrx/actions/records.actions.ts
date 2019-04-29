@@ -1,5 +1,6 @@
 import {Action} from '@ngrx/store';
 import {RecordModel} from '../../shared/record.model';
+import {Update} from '@ngrx/entity';
 
 export const ADD_RECORD = '[Record] Adding record';
 export const REMOVE_RECORD = '[Record] Remove record';
@@ -17,7 +18,7 @@ export class RemoveRecordAction implements Action {
 
 export class ChangeFavoriteAction implements Action {
   readonly type = CHANGE_FAVORITE;
-  constructor(public id: string, public changes: Partial<RecordModel>) {}
+  constructor(public id: string, public changes: Update<number>) {}
 }
 
 export type RecordsActions = AddRecordAction | RemoveRecordAction | ChangeFavoriteAction;

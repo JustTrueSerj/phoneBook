@@ -15,11 +15,10 @@ export function recordsReducer(state = initialState, action: RecordsActions): St
       return adapter.addOne(action.payload, state);
 
     case REMOVE_RECORD:
-      // @ts-ignore
-      return adapter.removeOne(action.payload, state);
+      return adapter.removeOne(action.payload.id, state);
 
     case CHANGE_FAVORITE:
-      return adapter.updateOne({id: action.id, changes: action.changes}, state);
+      return adapter.updateOne(action.id, state);
 
     default:
       return state;

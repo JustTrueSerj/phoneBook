@@ -29,17 +29,24 @@ export class RecordCreatorComponent implements OnInit {
   }
 
   addRecord() {
-  const record: RecordModel = {
-    ...this.recordCreatorForm.value,
-    id: this.idCounter,
-    isFavorite: false
-  };
-  this.idCounter++;
-  this.store.dispatch(new AddRecordAction(record));
-  this.recordCreatorForm.reset();
+    const record: RecordModel = {
+      ...this.recordCreatorForm.value,
+      id: this.idCounter,
+      isFavorite: false
+    };
+    this.idCounter++;
+    this.store.dispatch(new AddRecordAction(record));
+    this.recordCreatorForm.reset();
   }
 
   ngOnInit() {
-
+    // this.store.dispatch((new AddRecordAction({
+    //   id: -1,
+    //   phoneNumber: '+70000000000',
+    //   name: '',
+    //   surname: 'Фамилия',
+    //   patronymic: '',
+    //   isFavorite: false
+    // })));
   }
 }
