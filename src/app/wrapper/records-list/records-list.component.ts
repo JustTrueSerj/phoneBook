@@ -11,12 +11,9 @@ import {selectRecords} from '../../ngrx/selectors/record.selector';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class RecordsListComponent implements OnInit {
+export class RecordsListComponent {
   records$ = this.store.pipe(select(selectRecords));
 
   constructor(private store: Store<RootState>) {
-  }
-
-  ngOnInit() {
   }
 }

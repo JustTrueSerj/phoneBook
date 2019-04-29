@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {RecordModel} from '../../../shared/record.model';
 import {Store} from '@ngrx/store';
 import {ChangeFavoriteAction, RemoveRecordAction} from '../../../ngrx/actions/records.actions';
@@ -11,13 +11,10 @@ import {RootState} from '../../../shared/root-state.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class RecordComponent implements OnInit {
+export class RecordComponent {
   @Input() record: RecordModel;
 
   constructor(private store: Store<RootState>) {
-  }
-
-  ngOnInit() {
   }
 
   changeFavorite(record) {

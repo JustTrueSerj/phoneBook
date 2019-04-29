@@ -11,7 +11,7 @@ import {RootState} from '../../shared/root-state.model';
   styleUrls: ['record-creator.component.scss']
 })
 
-export class RecordCreatorComponent implements OnInit {
+export class RecordCreatorComponent {
   recordCreatorForm: FormGroup = this.fb.group({
     surname: ['', Validators.required],
     name: [''],
@@ -37,16 +37,5 @@ export class RecordCreatorComponent implements OnInit {
     this.idCounter++;
     this.store.dispatch(new AddRecordAction(record));
     this.recordCreatorForm.reset();
-  }
-
-  ngOnInit() {
-    this.store.dispatch((new AddRecordAction({
-      id: -1,
-      phoneNumber: '+70000000000',
-      name: '',
-      surname: 'Фамилия',
-      patronymic: '',
-      isFavorite: false
-    })));
   }
 }

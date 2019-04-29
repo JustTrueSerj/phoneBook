@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'app-wrapper',
@@ -7,10 +7,5 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class WrapperComponent implements OnInit {
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
+export class WrapperComponent {
 }
