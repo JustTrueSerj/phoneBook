@@ -18,7 +18,7 @@ export class RemoveRecordAction implements Action {
 
 export class ChangeFavoriteAction implements Action {
   readonly type = CHANGE_FAVORITE;
-  constructor(public id: string, public changes: Update<number>) {}
+  constructor(public payload: Update<RecordModel>) {}
 }
 
 export type RecordsActions = AddRecordAction | RemoveRecordAction | ChangeFavoriteAction;

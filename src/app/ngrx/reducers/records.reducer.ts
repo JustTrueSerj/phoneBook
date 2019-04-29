@@ -18,7 +18,7 @@ export function recordsReducer(state = initialState, action: RecordsActions): St
       return adapter.removeOne(action.payload.id, state);
 
     case CHANGE_FAVORITE:
-      return adapter.updateOne(action.id, state);
+      return adapter.updateOne(action.payload, state);
 
     default:
       return state;
