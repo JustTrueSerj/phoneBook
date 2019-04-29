@@ -40,13 +40,13 @@ export class RecordCreatorComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.store.dispatch((new AddRecordAction({
-    //   id: -1,
-    //   phoneNumber: '+70000000000',
-    //   name: '',
-    //   surname: 'Фамилия',
-    //   patronymic: '',
-    //   isFavorite: false
-    // })));
+    this.store.dispatch((new AddRecordAction({
+      id: -1,
+      phoneNumber: '+70000000000',
+      name: '',
+      surname: 'Фамилия',
+      patronymic: '',
+      isFavorite: false
+    })));
   }
 }
