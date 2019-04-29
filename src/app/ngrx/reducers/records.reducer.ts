@@ -15,6 +15,7 @@ export function recordsReducer(state = initialState, action: RecordsActions): St
       return adapter.addOne(action.payload, state);
 
     case REMOVE_RECORD:
+      // @ts-ignore
       return adapter.removeOne(action.payload, state);
 
     case CHANGE_FAVORITE:

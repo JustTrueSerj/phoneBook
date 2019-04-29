@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {RootState} from '../../shared/root-state.model';
-import {selectRecord, selectRecords} from '../../ngrx/selectors/record.selector';
+import {selectRecords} from '../../ngrx/selectors/record.selector';
 
 
 @Component({
@@ -18,6 +18,5 @@ export class RecordsListComponent implements OnInit {
   }
 
   ngOnInit() {
-   this.records$.subscribe(x => console.log('Поток - ',x));
   }
 }

@@ -22,6 +22,7 @@ export class RecordComponent implements OnInit {
 
   changeFavorite(record) {
     this.record.isFavorite = !this.record.isFavorite;
+    // @ts-ignore
     this.store.dispatch(new ChangeFavoriteAction(record));
   }
 

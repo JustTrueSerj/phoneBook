@@ -27,5 +27,4 @@ export const selectRecords = createSelector(
     ...notFavorite
   ]
 );
-console.log('Фильтрация прошла');
 
