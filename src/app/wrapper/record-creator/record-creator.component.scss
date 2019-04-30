@@ -1,0 +1,32 @@
+.recordCreatorForm {
+  padding-top: 200px;
+  padding-bottom: 80px;
+  display: flex;
+  .fieldContainer {
+    margin: 0 0px 0 50px;
+  }
+}
+
+.submitButton {
+  background-color: rgb(89, 168, 71);
+  color: white;
+  width: 65px;
+  border: 3px solid rgb(89, 168, 71);
+  border-radius: 2px;
+  transition: all ease 0.5s;
+  &:disabled {
+    background-color: grey;
+    color: ghostwhite;
+    border: 1px solid gray;
+  }
+}
+
+.field {
+  border-radius: 3px;
+  outline: none;
+}
+
+.invalid {
+  border: 1.5px solid red;
+  border-radius: 3px;
+}

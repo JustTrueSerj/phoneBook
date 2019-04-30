@@ -1,0 +1,9 @@
+.menu {
+  list-style: none;
+  letter-spacing: 0.3px;
+  display: flex;
+  font-weight: bold;
+  & li {
+    width: 300px
+  }
+}

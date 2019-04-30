@@ -1,1 +1,8 @@
-<h1>record</h1>
+<ul class="record" id="record_{{record.surname}}_{{record.phoneNumber}}">
+  <li class="star" [class.favorite]="record.isFavorite" (click)="changeFavorite(record)">{{record.isFavorite ? '&#9733;' : '&#9734;'}}</li>
+  <li>{{record.surname}}</li>
+  <li>{{record.name}}</li>
+  <li>{{record.patronymic}}</li>
+  <li>{{record.phoneNumber | comfortableTelephoneNumber}}</li>
+  <li class="removeButton" (click)="removeRecord(record)">&#10008;</li>
+</ul>
